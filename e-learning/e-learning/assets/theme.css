@@ -1,0 +1,140 @@
+/* ===== Light UI - Bright palette ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+    /* Màu rất sáng, nhiều trắng */
+    --bg: #ffffff;
+    --text: #0b1220;
+    --muted: #6b7280;
+    /* Xanh tươi sáng (pastel) */
+    --pri: #3b82f6; /* blue-500 */
+    --pri-2: #60a5fa; /* blue-400 */
+    --card: #ffffff;
+    --line: #eaeef6;
+    --radius: 14px;
+    --shadow: 0 8px 22px rgba(17,24,39,.06);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ===== Layout ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 34px 0; transition: opacity 0.5s ease; }
+.section h2 { font-size: 24px; margin: 0 0 14px; }
+
+/* ===== Header / Nav (sáng) ===== */
+.header {
+    position: sticky; top: 0; z-index: 50;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: saturate(180%) blur(6px);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { font-weight: 800; font-size: 18px; letter-spacing: .2px; }
+.brand span:last-child { color: var(--pri); }
+.menu { display: flex; gap: 14px; align-items: center; }
+.menu a { border-radius: 10px; padding: 8px 12px; border: 1px solid transparent; transition: background 0.2s ease; }
+.menu a:hover { background: #f4f7ff; }
+.menu .current { border-color: #dfe6ff; background: #f4f7ff; }
+
+/* ===== Buttons (sáng & nổi) ===== */
+.btn {
+    display: inline-block; padding: 10px 14px; border: 1px solid #edf0f6; border-radius: 10px; background: #fff;
+    transition: all 0.2s ease; box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(16,24,40,.06); }
+.btn.primary {
+    background: linear-gradient(90deg, var(--pri), var(--pri-2));
+    color: #fff; border-color: transparent;
+    box-shadow: 0 10px 22px rgba(59,130,246,.20);
+}
+.btn.ghost { background: transparent; }
+.btn.danger { border-color: #ffe4e6; background: #fff7f7; color: #b91c1c; }
+.btn.sm { padding: 8px 10px; font-size: 14px; }
+
+/* ===== Cards & Grid (sáng) ===== */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 16px; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.08); }
+.card h3 { margin: 0 0 6px; font-size: 18px; }
+.price { font-weight: 700; font-size: 14px; color: #2563eb; background: #eef4ff; display: inline-block; padding: 4px 10px; border-radius: 999px; }
+
+/* ===== Hero (gradient rất nhẹ & sáng) ===== */
+.hero {
+    padding: 62px 0 42px; border-bottom: 1px solid var(--line);
+    background:
+        radial-gradient(900px 420px at 12% -140px, rgba(96,165,250,.22), transparent 60%),
+        radial-gradient(720px 360px at 88% -140px, rgba(59,130,246,.18), transparent 55%),
+        linear-gradient(180deg, #ffffff, #f9fbff);
+}
+.hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: center; }
+.h-title { font-size: 46px; line-height: 1.12; margin: 0 0 12px; }
+.h-sub { font-size: 16px; color: var(--muted); margin: 0 0 20px; }
+.kpis { display: flex; gap: 16px; margin-top: 18px; color: var(--muted); font-size: 14px; }
+.kpis b { color: var(--text); }
+
+/* ===== Features (sáng) ===== */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.feature { border-radius: 14px; padding: 16px; border: 1px dashed #e7ebf5; background: #fbfdff; }
+.feature b { display: block; margin-bottom: 6px; }
+
+/* ===== Forms / Inputs (sáng, viền nhạt) ===== */
+input, select, textarea {
+    width: 100%; padding: 12px 12px; border: 1px solid #e8ecf6; border-radius: 10px; background: #fff;
+    outline: none; transition: border-color 0.18s ease, box-shadow 0.18s ease; font-size: 14px;
+}
+input:focus, select:focus, textarea:focus { border-color: #c7d2fe; box-shadow: 0 0 0 4px rgba(59,130,246,.12); }
+label { font-size: 14px; color: #111827; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* ===== Tables (sáng) ===== */
+table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 12px; background: #fff; }
+th, td { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; }
+th { background: #f7f9ff; color: #475569; font-weight: 700; }
+
+/* ===== Footer (sáng hơn bản trước) ===== */
+.footer { background: #0f1221; color: #d9def0; padding: 26px 0; margin-top: 30px; }
+.footer .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; }
+.footer a { color: #e8ecff; }
+
+/* ===== Flash messages (sáng) ===== */
+.flash { border-radius: 12px; padding: 12px 14px; margin: 14px 0; display: flex; gap: 10px; align-items: center; }
+.flash.ok { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+.flash.error { background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; }
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) { .hero .wrap { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .features { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+    .cards, .features { grid-template-columns: 1fr; }
+    .h-title { font-size: 34px; }
+    .nav { height: 58px; }
+}
+
+/* ===== Force always-light (vô hiệu hoá dark mode của hệ thống) ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #ffffff; --text: #0b1220; --muted: #6b7280;
+        --card: #ffffff; --line: #eaeef6;
+    }
+    .header { background: #fff; border-color: var(--line); }
+    .btn { background: #fff; border-color: #edf0f6; color: var(--text); }
+    th { background: #f7f9ff; color: #475569; }
+    .feature { background: #fbfdff; border-color: #e7ebf5; }
+}
